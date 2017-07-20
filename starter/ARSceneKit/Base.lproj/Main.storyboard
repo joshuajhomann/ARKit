@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KBe-8h-qBX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="UIK-IF-SxQ">
+            <objects>
+                <viewController id="KBe-8h-qBX" customClass="ARViewController" customModule="ARSceneKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yeJ-Rh-HEF"/>
+                        <viewControllerLayoutGuide type="bottom" id="xM5-3x-MpF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fQt-K5-9NK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQ0-4k-84t">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="KBe-8h-qBX" id="Fj3-hN-UOI"/>
+                                    <outletCollection property="gestureRecognizers" destination="VNv-Fw-yvg" appends="YES" id="sgj-eb-p2b"/>
+                                    <outletCollection property="gestureRecognizers" destination="mDB-1N-HV8" appends="YES" id="px2-Sn-w3Q"/>
+                                    <outletCollection property="gestureRecognizers" destination="8Yo-CL-NRs" appends="YES" id="vvQ-yY-f48"/>
+                                </connections>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oQ0-4k-84t" firstAttribute="top" secondItem="yeJ-Rh-HEF" secondAttribute="bottom" id="M9Y-Io-Qw8"/>
+                            <constraint firstItem="xM5-3x-MpF" firstAttribute="top" secondItem="oQ0-4k-84t" secondAttribute="bottom" id="Nx8-cf-a4T"/>
+                            <constraint firstItem="oQ0-4k-84t" firstAttribute="leading" secondItem="fQt-K5-9NK" secondAttribute="leading" id="hct-Pn-5oA"/>
+                            <constraint firstAttribute="trailing" secondItem="oQ0-4k-84t" secondAttribute="trailing" id="uMo-li-BK8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="oQ0-4k-84t" id="uF3-dt-ji5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5x-VS-UJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VNv-Fw-yvg">
+                    <connections>
+                        <action selector="tap:" destination="KBe-8h-qBX" id="BAM-eR-N3y"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="mDB-1N-HV8">
+                    <connections>
+                        <action selector="pinch:" destination="KBe-8h-qBX" id="1Vv-wd-VxI"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="8Yo-CL-NRs">
+                    <connections>
+                        <action selector="pan:" destination="KBe-8h-qBX" id="cW3-dO-poN"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="62" y="60"/>
+        </scene>
+    </scenes>
+</document>
